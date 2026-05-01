@@ -1,0 +1,232 @@
+/* Modern Footer Styles */
+#footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.f-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.f-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.f-column {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.f-column:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.f-column h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.f-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.f-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.f-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.f-column ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.f-column ul li a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: #667eea;
+}
+
+.f-column ul li a:hover {
+    color: #fff;
+    transform: translateX(5px);
+    padding-left: 1.75rem;
+}
+
+.f-column ul li a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    border-color: transparent;
+}
+
+.social-links a:hover::before {
+    opacity: 1;
+}
+
+.social-links a i {
+    position: relative;
+    z-index: 1;
+}
+
+.copyright {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* Tablet and larger phones (max-width: 768px) */
+@media (max-width: 768px) {
+    #footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .f-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .f-column {
+        padding: 1.25rem;
+    }
+
+    .f-column h4 {
+        font-size: 1.2rem;
+    }
+
+    .f-column ul li a {
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .copyright {
+        font-size: 0.85rem;
+    }
+}
+
+/* Small phones (max-width: 576px) */
+@media (max-width: 576px) {
+    #footer {
+        padding: 2.5rem 1rem 1.25rem;
+        margin-top: 3rem;
+    }
+
+    .f-column {
+        padding: 1rem;
+    }
+
+    .f-column h4 {
+        font-size: 1.1rem;
+    }
+
+    .f-column ul li a {
+        font-size: 0.85rem;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}

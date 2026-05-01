@@ -1,0 +1,206 @@
+/* Contact Page Styles */
+.contact-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info-card, .feedback-card {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover, .feedback-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+.info-items {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #fff;
+    background: var(--gradient-1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.info-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.info-item a, .info-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.feedback-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.feedback-card p {
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+}
+
+.feedback-card .cta-button {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Reuse hero-sub from about if needed, but since it's separate files: */
+.hero-sub {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+}
+
+.hero-sub img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-sub .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.hero-sub h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.hero-sub p {
+    color: #e2e8f0;
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.accent-line {
+    width: 50px;
+    height: 4px;
+    background: var(--gradient-1);
+    margin: 0.75rem auto;
+    border-radius: 2px;
+}
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-card, .feedback-card {
+        padding: 2rem;
+    }
+    
+    .hero-sub h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Legal Pages Styles */
+.legal-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.legal-box {
+    background: #fff;
+    padding: 4rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    line-height: 1.8;
+}
+
+.legal-box h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.legal-box h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+}
+
+.legal-box h4 {
+    color: var(--text-primary);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.legal-box ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.legal-box li {
+    margin-bottom: 1rem;
+}
+
+.legal-box strong {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .legal-box {
+        padding: 2rem;
+    }
+    
+    .legal-box h2 {
+        font-size: 1.6rem;
+    }
+}
