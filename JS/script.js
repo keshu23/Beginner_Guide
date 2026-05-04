@@ -141,8 +141,8 @@ const createBackToTopButton = () => {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: var(--neon-lime);
+    color: #000;
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
@@ -152,7 +152,7 @@ const createBackToTopButton = () => {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 16px rgba(204, 255, 0, 0.4);
     z-index: 999;
   `;
   
@@ -177,12 +177,12 @@ const createBackToTopButton = () => {
   
   button.addEventListener('mouseenter', () => {
     button.style.transform = 'translateY(-5px)';
-    button.style.boxShadow = '0 8px 24px rgba(102, 126, 234, 0.6)';
+    button.style.boxShadow = '0 8px 24px rgba(204, 255, 0, 0.6)';
   });
   
   button.addEventListener('mouseleave', () => {
     button.style.transform = 'translateY(0)';
-    button.style.boxShadow = '0 4px 16px rgba(102, 126, 234, 0.4)';
+    button.style.boxShadow = '0 4px 16px rgba(204, 255, 0, 0.4)';
   });
 };
 
@@ -236,7 +236,7 @@ const createRipple = (event) => {
     height: ${size}px;
     left: ${x}px;
     top: ${y}px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(204, 255, 0, 0.3);
     border-radius: 50%;
     transform: scale(0);
     animation: ripple 0.6s ease-out;
@@ -265,3 +265,35 @@ document.head.appendChild(style);
 document.querySelectorAll('a, button').forEach(element => {
   element.addEventListener('click', createRipple);
 });
+
+// Contact Form Handling
+const contactForm = document.querySelector('.contact-form');
+const successOverlay = document.getElementById('successOverlay');
+
+if (contactForm && successOverlay) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Simulate data transmission
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Transmitting...';
+    submitBtn.style.opacity = '0.7';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+      successOverlay.classList.add('active');
+      contactForm.reset();
+      submitBtn.textContent = originalText;
+      submitBtn.style.opacity = '1';
+      submitBtn.disabled = false;
+    }, 1500);
+  });
+}
+
+function closeSuccessOverlay() {
+  const successOverlay = document.getElementById('successOverlay');
+  if (successOverlay) {
+    successOverlay.classList.remove('active');
+  }
+}
